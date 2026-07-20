@@ -1,0 +1,84 @@
+secrets/
+
+# Spring Boot local profile secrets
+backend/src/main/resources/application-local.properties
+
+# Any .env file with real values
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+!.env.example
+!frontend/.env.example
+
+# Compiled class files
+*.class
+
+# Maven build output
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+
+.idea/
+*.iml
+*.iws
+*.ipr
+.eclipse/
+.settings/
+.project
+.classpath
+*.launch
+
+# Spring Boot DevTools restart trigger
+.spring-boot-devtools.properties
+
+#NOde
+node_modules/
+frontend/node_modules/
+
+# Vite and React build output
+frontend/dist/
+frontend/.vite/
+
+# Local env files for Vite
+frontend/.env.local
+frontend/.env.*.local
+
+# Docker volumes and local data (if using local volume mounts for MySQL data)
+docker/data/
+docker/mysql-data/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+*.log
+logs/
+backend/logs/
+frontend/logs/
+
+backend/target/surefire-reports/
+backend/target/site/
+coverage/
+.nyc_output/
+
+
+# Editor swap files
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp

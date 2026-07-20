@@ -67,4 +67,3 @@ An offline, hardened Linux container is spun up for each user terminal session. 
 An authenticated settings dashboard where students can customize their profile details.
 - **Get Profile**: `GET /api/v1/users/me`
 - **Update Profile**: `PUT /api/v1/users/me` (supports validating input parameters and enforcing email uniqueness).
-# linux-mastery

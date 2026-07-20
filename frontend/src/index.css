@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import 'highlight.js/styles/github-dark.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Terminal code block */
+  --font-code:         'JetBrains Mono', monospace;
+  --code-bg:           #0D1A0D;   /* very dark green-black, distinct from #0A0A0A prose bg */
+  --code-border:       #1A3A1A;   /* dark green border, visible but not loud */
+  --code-header-bg:    #0A120A;   /* slightly darker than the block body for the titlebar */
+  --code-dot-close:    #3A1A1A;   /* muted red dot */
+  --code-dot-min:      #2A2A1A;   /* muted yellow dot */
+  --code-dot-max:      #1A2A1A;   /* muted green dot */
+  --code-text:         #D4F0D4;   /* slightly green-tinted white for code text */
+  --code-ln-color:     #2A4A2A;   /* line numbers, dark enough not to distract */
+  --code-copy-idle:    #2A4A2A;   /* copy button default */
+  --code-copy-hover:   #D4F0D4;   /* copy button hover */
+  --code-copy-success: #39D353;   /* brief green flash on successful copy */
+  --code-prompt:       #39D353;   /* $ prompt character color */
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #0A0A0A 25%, #161616 50%, #0A0A0A 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+.lm-cpu-pulse {
+  offset-anchor: 10px 0px;
+  animation: lm-cpu-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.75, -0.01, 0, 0.99);
+}
+
+.lm-cpu-line-1 {
+  offset-path: path("M 10 20 h 79.5 q 5 0 5 5 v 30");
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.lm-cpu-line-4 {
+  offset-path: path("M 170 80 v -21.8 q 0 -5 -5 -5 h -65");
+  animation-delay: 4s;
+  animation-duration: 3s;
+}
+
+@keyframes lm-cpu-path {
+  0%   { offset-distance: 0%;   }
+  100% { offset-distance: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm-cpu-pulse {
+    animation: none;
+  }
+}
+
+/* Highlight.js manual overrides for terminal theme */
+.hljs-keyword { color: #89DDFF !important; }
+.hljs-string { color: #C3E88D !important; }
+.hljs-comment { color: #546E7A !important; font-style: italic; }
+.hljs-number { color: #F78C6C !important; }
+.hljs-function { color: #82AAFF !important; }
+.hljs {
+  color: var(--code-text) !important;
+  background: transparent !important;
+}
